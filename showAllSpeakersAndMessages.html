@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Conference Picker</title>
+    <script>
+      var talks = (function () {
+        var talks = null;
+        $.ajax({
+          async: false,
+          global: false,
+          url: "conferenceApril2020.json",
+          dataType: "json",
+          success: function (data) {
+            talks = data;
+          },
+        });
+        return talks;
+      })();
+
+      //document.getElementById("content").innerHTML = talks.length;
+    </script>
+  </head>
+  <body>
+    <a href="showAllSpeakersAndMessages.html"
+      >Show Full List of Speakers and Messages</a
+    >
+    |
+    <a href="selectSpeaker.html">See Messages by Speaker</a> |
+    <a href="guessTheSpeaker.html">See a Message and guess the Speaker</a>
+    <h2>Conference April 2020</h2>
+    <h3>All talks</h3>
+    <p id="content"></p>
+    <script>
+      var txt = "<table border=1>";
+      for (i in talks) {
+        if (talks[i].eventType == "TALK") {
+          var messagesLocal = "";
+          for (m in talks[i].messages) {
+            //
+            messagesLocal += talks[i].messages[m] + "<br>";
+          }
+          txt +=
+            "<tr><td>" +
+            talks[i].person +
+            "</td><td>" +
+            talks[i].conferenceSession +
+            "</td><td>" +
+            messagesLocal +
+            "</td></tr>";
+        }
+      }
+      txt += "</table>";
+      document.getElementById("content").innerHTML += txt;
+    </script>
+  </body>
+</html>

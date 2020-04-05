@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Conference Picker</title>
+    <script>
+      var talks = [
+        {
+          _comment:
+            "these will be a list of events at April 4, 2020 General Conference",
+          eventType: "COMMENT",
+        },
+        {
+          eventType: "PRAYER",
+          conferenceSession: "Saturday Morning",
+          person: "Richard J Maynes",
+          calling: "70",
+        },
+        {
+          eventType: "TALK",
+          conferenceSession: "Saturday Morning",
+          person: "Russll M. Nelson",
+          calling: "Prophet",
+          messages: [
+            "Life's trials extend beyond the pandemic",
+            "We need to fill our spiritual storehouses as much as our physical ones",
+            "Listen to messages that are for you",
+          ],
+        },
+        {
+          eventType: "TALK",
+          conferenceSession: "Saturday Morning",
+          person: "M. Russell Ballard",
+          messages: [
+            "Lucy Smith and Joseph Smith Sr. had been through a tremendous emotional struggle when they had to start over",
+            "Joseph Smith's soul was filled with love for days after the first vision",
+          ],
+        },
+        {
+          eventType: "TALK",
+          conferenceSession: "Saturday Morning",
+          person: "Jim Raspband",
+          messages: [
+            "The atonement allows things to be fixed and repaired that you cannot repair",
+            "For those that sin against the light, repentance can redeem them",
+            "Although we can't fix all of the effects of our mistakes, we can do all we can to repair them",
+          ],
+        },
+        {
+          eventType: "TALK",
+          conferenceSession: "Saturday Morning",
+          person: "Joy D. Jones",
+          calling: "Primary General President",
+          messages: [
+            "Is it hard to be a prophet, the prophet was asked.  The Lord loves effort.  Effort brings rewards",
+            "We are always progressing as long as we strive to follow the Lord",
+            "We can turn to the scriptures to get wisdom to act",
+            "Through convenants, we have access to the power of the priesthood",
+            "The greatest champion of women is Jesus Christ",
+          ],
+        },
+        {
+          eventType: "TALK",
+          person: "Neil L. Andersen",
+          calling: "Apostle",
+          conferenceSession: "Saturday Morning",
+          messages: [
+            "Quoting Joseph: I don't blame anyone for not believing my history, If I hadn't experienced myself, I wouldn't believe it either",
+            "Sacred experiences can be like a stone, lighting our paths during dark times",
+          ],
+        },
+        {
+          eventType: "TALK",
+          person: "Douglas D. Holmes",
+          conferenceSession: "Saturday Morning",
+          calling: "First Counselor, Young Men General Presidency",
+          messages: [
+            "The Lord gives us the tools that we need to succeed in our day",
+            "Helping understanding their identities is one for greatest gifts we can give",
+            "Remember that gatherings allow us to share love",
+            "The gospel can't be forced into our hearts",
+            "The youth will amaze you if you get out the way and allow them to choose to sacrifice for the cause of Christ",
+          ],
+        },
+        {
+          eventType: "TALK",
+          person: "Henry B. Eyring",
+          conferenceSession: "Saturday Morning",
+          calling: "2nd Counselor in First Presidency",
+          messages: [
+            "We as a people will become more united among increasing conflict",
+            "The enemy of the restoration will try to stop us from praying",
+          ],
+        },
+        {
+          person: "Ruben",
+          eventType: "PRAYER",
+          conferenceSession: "Saturday Afternoon",
+        },
+        {
+          person: "Dallin H. Oaks",
+          eventType: "SUSTAINING",
+          conferenceSession: "Saturday Afternoon",
+        },
+        {
+          person: "Kevin Jergensen",
+          eventType: "AUDIT REPORT",
+          conferenceSession: "Saturday Afternoon",
+        },
+        {
+          person: "Ulysses S. Soares",
+          eventType: "TALK",
+          conferenceSession: "Saturday Afternoon",
+          messages: [
+            "We should look at translation more like revelation than modern translation",
+            "",
+          ],
+        },
+        {
+          person: "John A. McCune",
+          eventType: "TALK",
+          conferenceSession: "Saturday Afternoon",
+          messages: [
+            "Note that Lehi invited his children to come to the tree of life, he stayed where he was at",
+            "The Lord's joy and peace is added to us in extra measure when we ome to jim",
+          ],
+        },
+        {
+          person: "Gerald Causse",
+          eventType: "TALK",
+          conferenceSession: "Saturday Afternoon",
+          calling: "Presiding Bishop",
+          messages: [
+            "Prophets have shown how our hearts can be changed through conversion",
+            "When was the last time you felt the sweetness of the Savior's atonement?",
+          ],
+        },
+        {
+          person: "Dale G. Renlund",
+          eventType: "TALK",
+          conferenceSession: "Saturday Afternoon",
+          messages: [
+            "Prophets consistently remind us to remember the goodness of God",
+            "We are like Tom who received a hearth transplant and became solemn.  We have received the atonement",
+            "Reflecting on God's goodness and mercy helps us be more spiritually receptive",
+            "When we remember what God and Jesus have done for us, we won't take them for granted",
+            "Without Jesus, we are doomed",
+            "God is deeply disappointed when we don't remember his goodness",
+          ],
+        },
+        {
+          person: "Benjamin M. Z. Tai",
+          eventType: "TALK",
+          conferenceSession: "Saturday Afternoon",
+          messages: [
+            "We will be transformed and become more like Jesus by studying the scriptures",
+          ],
+        },
+        {
+          person: "Gary E. Stevenson",
+          eventType: "TALK",
+          conferenceSession: "Saturday Afternoon",
+          messages: [
+            "Strengthen our foundations, like the Salt Lake Temple is having done to it",
+            "As much darkness as I have seen, I have seen more light",
+          ],
+        },
+      ];
+
+      //document.getElementById("content").innerHTML = talks.length;
+    </script>
+  </head>
+  <body>
+    <a href="showAllSpeakersAndMessages.html"
+      >Show Full List of Speakers and Messages</a
+    >
+    |
+    <a href="selectSpeaker.html">See Messages by Speaker</a> |
+    <a href="guessTheSpeaker.html">See a Message and guess the Speaker</a>
+    <h2>Conference April 2020</h2>
+    <h3>See Messages by Speaker</h3>
+    <span id="speakerList"></span>
+    <p id="content"></p>
+    <script>
+      function showSpeakersSelect() {
+        var selectList =
+          '<select onchange="show_messages(this.value)"><option>Choose a speaker</option>';
+        for (i in talks) {
+          if (talks[i].eventType == "TALK") {
+            selectList += "<option>" + talks[i].person + "</option>";
+          }
+        }
+        selectList += "</select>";
+        document.getElementById("speakerList").innerHTML = selectList;
+      }
+
+      function show_messages(speakerName) {
+        var txt = "<table border=1>";
+        for (i in talks) {
+          if (talks[i].person == speakerName) {
+            var messagesLocal = "";
+            for (m in talks[i].messages) {
+              //
+              messagesLocal += talks[i].messages[m] + "<br>";
+            }
+            txt +=
+              "<tr><td>" +
+              talks[i].person +
+              "</td><td>" +
+              talks[i].conferenceSession +
+              "</td><td>" +
+              messagesLocal +
+              "</td></tr>";
+          }
+        }
+        txt += "</table>";
+        document.getElementById("content").innerHTML = txt;
+      }
+      showSpeakersSelect();
+    </script>
+  </body>
+</html>
