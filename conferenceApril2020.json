@@ -314,10 +314,13 @@
     ]
   },
   {
-    "person": "D. Todd Christofferson J. Whitney Clayton",
+    "person": "D. Todd Christofferson",
     "eventType": "TALK",
     "conferenceSession": "Sunday Afternoon",
-    "messages": [""]
+    "messages": [
+      "The restoration isn't just for us today",
+      "Everyone is worthy of an invitation to learn of the gospel"
+    ]
   },
   {
     "person": "Dieter F. Uchtdorf",
@@ -328,5 +331,22 @@
       "Church is structured to help us develop Christlike characterstics",
       "We learn the important lessons of life through experience, and that wickedness never was happiness"
     ]
+  },
+  {
+    "person": "Russel M. Nelson",
+    "eventType": "TALK",
+    "conferenceSession": "Sunday Afternoon",
+    "messages": [
+      "Hear Him summarizes this conference",
+      "Begin anew to hearken to the words of the savior and decreased fear and increased faith will follow",
+      "Temples announced in Argentina, Florida, Congo, Pennsylvania, Nigeria, Utah, Dubai, Shanghai",
+      "During times of distress, you can still draw on the blessings of the temple",
+      "I bless you with peace and increasing faith in the Lord, and repent, be more like Jesus, to know that Joseph Smith is a prophet, to be healed consistent with the will of the Lord"
+    ]
+  },
+  {
+    "person": "Lynn G. Robbins",
+    "eventType": "PRAYER",
+    "conferenceSession": "Sunday Afternoon"
   }
 ]
