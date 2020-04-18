@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Conference Picker</title>
-  </head>
-  <body>
-    <a href="showAllSpeakersAndMessages.html"
-      >Show Full List of Speakers and Messages</a
-    >
-    |
-    <a href="selectSpeaker.html">See Messages by Speaker</a> |
-    <a href="guessTheSpeaker.html">See a Message and guess the Speaker</a>
-  </body>
+
+<head>
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+      background-color: #111;
+    }
+
+    .active {
+      background-color: #4CAF50;
+    }
+  </style>
+  <title>Conference Picker</title>
+</head>
+
+<body>
+  <ul>
+    <li>
+      <a class="active" href="index.html">Home</a>
+    </li>
+    <li>
+      <a href="showAllSpeakersAndMessages.html">Show Full List of Speakers and Messages</a>
+    </li>
+    <li>
+      <a href="selectSpeaker.html">See Messages by Speaker</a></li>
+    <li>
+      <a href="guessTheSpeaker.html">See a Message and guess the Speaker</a>
+    </li>
+  </ul>
+  <h1>Welcome most wonderful TAs to the Conference Picker Thing!</h1>
+</body>
+
 </html>
